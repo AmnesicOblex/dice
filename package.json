@@ -1,5 +1,5 @@
 {
-  "name": "dice",
+  "name": "@amnesic0blex/dice",
   "version": "1.0.0",
   "description": "Dice rolling node module for dnd.",
   "main": "index.js",
