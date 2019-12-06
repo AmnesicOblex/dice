@@ -1,7 +1,10 @@
 # dice
 The `@amnesic0blex/dice` module is a collection of simple functions that help with random generation. 
 # Usage
-
+First make sure the package is installed
+``` bash
+npm install @amnesic0blex/dice
+```
 ## Table of contents
 - [dice](#dice)
 - [Usage](#usage)
@@ -20,11 +23,11 @@ Simulates the rolling of an arbitrary number of arbitrary sided dice. In this ex
 
 ``` js
 const dice = require('@amnesic0blex/dice')
-
-console.log(dice.roll(1,100))
+ 
+console.log(`1d100: ${dice.roll(1,100)}`)
 var rolls = dice.roll(4,6)
-console.log(rolls)
-console.log(rolls.reduce(dice.getSum))
+console.log(`4d6: ${rolls}`)
+console.log(`Sum 4d6: ${rolls.reduce(dice.getSum)}`)
 ```
 
 ## Random Integer Generator
@@ -54,7 +57,7 @@ for (var i = 0; i < 100; ++i) {
     }
 }
 console.log(`Heads: ${heads}`)
-console.log(`Tails: ${tails})
+console.log(`Tails: ${tails}`)
 ```
 
 ## Ability Score Modifiers
@@ -108,7 +111,7 @@ var raceTable = [
         value: "Dwarf"
     },
     {
-        weight: 15
+        weight: 15,
         value: "Elf"
     },
     {
