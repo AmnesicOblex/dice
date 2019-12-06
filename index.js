@@ -94,8 +94,12 @@ module.exports = {
             current += element.weight
             return current >= roll
         })
-
-        return element.value
+        if (element.value != undefined) {
+            return element.value
+        } else {
+            delete element.weight
+            return element
+        }
     }
 }
 
