@@ -23,7 +23,7 @@ module.exports = {
     },
 
     /**
-     * Simulates the rolling of an arbitrary number of arbitrary sided dice
+     * Simulates the rolling of an arbitrary number of arbitrary sided dice.
      * @param {Number} diceNum The number of dice to roll.
      * @param {Number} diceType The type of dice to roll (d6, d8, d100, etc.).
      * @returns An array of dice rolls.
