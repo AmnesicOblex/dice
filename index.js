@@ -61,7 +61,7 @@ module.exports = {
      * @returns Randomly selected value from table.
      */
     rollTable (table) {
-        return table[randInt(0, table.length)]
+        return table[randInt(0, table.length - 1)]
     },
     
     /**
