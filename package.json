@@ -1,6 +1,6 @@
 {
   "name": "@amnesic0blex/dice",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Dice rolling node module for dnd.",
   "main": "index.js",
   "scripts": {
