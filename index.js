@@ -4,7 +4,7 @@ module.exports = {
      * Randomly generates a number between two numbers. If only one value is given it is assumed to be the max and the minimum defaults to 1.
      * @param {Number} min The minimum potential value.
      * @param {Number} max The maximum potential value.
-     * @returns The randomly generated number in the given range.
+     * @returns {Number} The randomly generated number in the given range.
      */
     randInt (min, max) {
         return randInt(min, max)
@@ -12,7 +12,7 @@ module.exports = {
 
     /**
      * Simulates the flipping of a coin.
-     * @returns The result of the flip, either true or false.
+     * @returns {Boolean} The result of the flip, either true or false.
      */
     flip() {
         var result = false
@@ -26,7 +26,7 @@ module.exports = {
      * Simulates the rolling of an arbitrary number of arbitrary sided dice.
      * @param {Number} diceNum The number of dice to roll.
      * @param {Number} diceType The type of dice to roll (d6, d8, d100, etc.).
-     * @returns An array of dice rolls.
+     * @returns {Number[]} An array of dice rolls.
      */
     roll (diceNum, diceType){
         var rolls = []
@@ -39,7 +39,7 @@ module.exports = {
     /**
      * Takes a raw ability score and converts it to an ability score modifier
      * @param {Number} rawScore The raw ability score.
-     * @returns The calculated ability score modifier.
+     * @returns {Number} The calculated ability score modifier.
      */
     mod (rawScore) {
         return Math.floor((rawScore - 10) / 2) 
@@ -49,7 +49,7 @@ module.exports = {
     * Reduction function to some an array.
     * @param {Number} total The old total.
     * @param {Number} num The number to add.
-    * @returns The new total.
+    * @returns {Number} The new total.
     */ 
     getSum (total, num) {
         return getSum(total, num)
@@ -58,7 +58,7 @@ module.exports = {
     /**
      * Randomly selects an entry from the given table array.
      * @param {Array} table The table of values to select values from.
-     * @returns Randomly selected value from table.
+     * @returns {*} Randomly selected value from table.
      */
     rollTable (table) {
         return table[randInt(0, table.length - 1)]
@@ -69,7 +69,7 @@ module.exports = {
      * @param {Array} table The table of values to select values from.
      * @param {Number} diceNum The number of dice to roll.
      * @param {Number} diceType The type of dice to roll (d6, d8, d100, etc.)
-     * @returns Randomly selected weighted value from table.
+     * @returns {*} Randomly selected weighted value from table.
      */
     rollWeightedTable (table, diceNum, diceType) {
         // Calculates the upper bound for the weighted table.
@@ -107,7 +107,7 @@ module.exports = {
      * @param {Object} object The parent object with weighted props.
      * @param {Number} [diceNum] The number of dice to roll. Optional.
      * @param {Number} diceType The type of dice to roll. Optional.
-     * @returns Object with the prop name and the prop object with the weight stripped out.
+     * @returns {Object} with the prop name and the prop object with the weight stripped out.
      */
     rollWeightedObject (object, diceNum, diceType) {
         // Converts the object to a weighted table
@@ -129,7 +129,7 @@ module.exports = {
     /**
      * Randomly selects a prop from a parent object.
      * @param {Object} object The parent object.
-     * @returns The selected prop name and value
+     * @returns {Object} The selected prop name and value
      */
     rollObject (object) {
         // Converts the object to a table
@@ -150,7 +150,7 @@ module.exports = {
  * Randomly generates a number between two numbers.
  * @param {Number} min The maximum potential value.
  * @param {Number} max The minimum potential value. If left blank, defaults to 1
- * @returns The randomly generated number in the given range.
+ * @returns {Number} The randomly generated number in the given range.
  */
 function randInt (min, max) {
     if (max == undefined) {
@@ -164,7 +164,7 @@ function randInt (min, max) {
  * Reduction function to some an array.
  * @param {Number} total The old total.
  * @param {Number} num The number to add.
- * @returns The new total.
+ * @returns {Number} The new total.
  */
 function getSum (total, num) {
     return total + num
