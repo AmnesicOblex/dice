@@ -103,6 +103,25 @@ module.exports = {
     },
 
     /**
+     * Randomly selects a prop from a parent object.
+     * @param {Object} object The parent object.
+     * @returns {Object} The selected prop name and value
+     */
+    rollObject (object) {
+        // Converts the object to a table
+        var table = []
+        for (props in object) {
+            table.push(props)
+        }
+        // Randomly selects a prop using the rollTable function 
+        var result = {}
+        result.prop = this.rollTable(table)
+        result.object = object[result.prop]
+        delete result.object.value
+        return result
+    },
+
+    /**
      * Randomly selects a prop object with a value weight from a parent object.
      * @param {Object} object The parent object with weighted props.
      * @param {Number} [diceNum] The number of dice to roll. Optional.
@@ -121,25 +140,6 @@ module.exports = {
         // Randomly selects a prop using the rollWeightedTable function 
         var result = {}
         result.prop = this.rollWeightedTable(table, diceNum, diceType)
-        result.object = object[result.prop]
-        delete result.object.value
-        return result
-    },
-
-    /**
-     * Randomly selects a prop from a parent object.
-     * @param {Object} object The parent object.
-     * @returns {Object} The selected prop name and value
-     */
-    rollObject (object) {
-        // Converts the object to a table
-        var table = []
-        for (props in object) {
-            table.push(props)
-        }
-        // Randomly selects a prop using the rollTable function 
-        var result = {}
-        result.prop = this.rollTable(table)
         result.object = object[result.prop]
         delete result.object.value
         return result
